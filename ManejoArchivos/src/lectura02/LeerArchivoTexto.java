@@ -22,6 +22,7 @@ public class LeerArchivoTexto {
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
                 List<String> lista = Arrays.asList(linea.split("\\|"));
+                // Se usa \\ cuando se utiliza caracteres diferentes de , y ;
                 ArrayList<String> linea_partes = new ArrayList<>(lista);
                 
                 
