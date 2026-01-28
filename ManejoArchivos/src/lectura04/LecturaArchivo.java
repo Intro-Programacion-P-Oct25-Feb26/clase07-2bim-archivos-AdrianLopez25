@@ -28,25 +28,20 @@ public class LecturaArchivo {
                 List<String> lista = Arrays.asList(linea.split("\\|"));
                 ArrayList<String> linea_partes = new ArrayList<>(lista);
 
-                if (linea_partes.size() >= 4) {
-                    String valorString = linea_partes.get(3); 
-                    double valorNumerico = Double.parseDouble(valorString);
+                
+                    String valor = linea_partes.get(3); 
+                    double valorNumerico = Double.parseDouble(valor);
 
                     sumaTotal = sumaTotal + valorNumerico;
-                    contador = contador + 1;
                     
                     System.out.println("Valor leído: " + valorNumerico);
-                }
+                
             } 
             entrada.close();
 
-            if (contador > 0) {
-                double promedio = sumaTotal / contador;
+                double promedio = sumaTotal / 2;
                 System.out.printf("Suma total:%.2f \nEl promedio es:%.2f ", 
                         sumaTotal, promedio);
-            } else {
-                System.out.println("No se encontraron datos para promediar.");
-            }
 
         } catch (Exception e) {
             System.err.println("Error al leer del archivo.");
